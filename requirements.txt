@@ -5,4 +5,4 @@ numpy
 pandas
 matplotlib
 alpha_vantage
-torch==1.8.1+cpu
+torch==1.11.0+cpu

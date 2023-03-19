@@ -9,3 +9,4 @@
 .env.production.local
 .idea/
 __pycache__/
+/trading_algos/.ipynb_checkpoints/

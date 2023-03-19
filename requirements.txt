@@ -1,8 +1,8 @@
--f https://download.pytorch.org/whl/torch_stable.html
+-f https://download.pytorch.org/whl/cpu
 jupyter
 ipykernel
 numpy
 pandas
 matplotlib
 alpha_vantage
-torch==1.11.0+cpu
+torch

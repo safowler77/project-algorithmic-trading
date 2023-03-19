@@ -1,2 +1,8 @@
 jupyter
 ipykernel
+numpy
+pandas
+torch
+matplotlib
+alpha_vantage
+sklearn

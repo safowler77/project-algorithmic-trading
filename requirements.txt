@@ -2,3 +2,7 @@
 torch==1.13.0+cpu
 jupyter
 ipykernel
+numpy
+pandas
+matplotlib
+alpha_vantage

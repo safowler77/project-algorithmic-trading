@@ -11,7 +11,7 @@ from tradester.models import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
 
 import csv
 from io import StringIO
@@ -295,3 +295,18 @@ def update_stocks_daily(request):
             Stock.objects.bulk_update(stocks_to_update, fields=[
                                   'current_price', 'daily_high', 'daily_low', 'daily_num_transactions', 'daily_open_price', 'daily_volume', 'daily_vwap'])
             
+
+# Shows that we can get the user ID from an access token
+class UserID(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request):
+        token_header = request.headers['authorization']
+        token_header_args = token_header.split()
+        token = token_header_args[1]
+
+        token_obj = AccessToken(token)
+
+        user_id = token_obj['user_id']
+        user = User.objects.get(id=user_id)
+        return Response({'user_id': user.id, 'username': user.username})

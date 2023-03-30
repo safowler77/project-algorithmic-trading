@@ -12,4 +12,5 @@ urlpatterns = [
     path('logout/', views.LogoutView.as_view(), name ='logout'),
     path('register/', views.RegisterUser.as_view(), name ='register'),
     path('update_stocks_daily/', views.update_stocks_daily, name='update_stocks_daily'),
+    path('get_user_id/', views.UserID.as_view(), name ='get_user_id'),
 ]
